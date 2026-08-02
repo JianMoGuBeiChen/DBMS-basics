@@ -14,23 +14,6 @@ header {
   padding: 20px;
 }
 
-nav {
-  background: #2563eb;
-  text-align: center;
-  padding: 15px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 20px;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: #ffd54f;
-}
-
 main {
   width: 90%;
   max-width: 1000px;
