@@ -6,9 +6,6 @@ import pymysql
 from pymysql.cursors import DictCursor
 from datetime import date, datetime, time, timedelta
 
-# ==========================================
-# 1. Database Configuration
-# ==========================================
 DB_CONFIG = {
     "host": "localhost",
     "port": 3306,
@@ -18,9 +15,6 @@ DB_CONFIG = {
     "cursorclass": DictCursor 
 }
 
-# ==========================================
-# 2. Pydantic Schema (API Response Format)
-# ==========================================
 class CrimeRecordResponse(BaseModel):
     crime_id: int = Field(..., alias="Crime Id")
     original_crime_type_name: str = Field(..., alias="Original Crime Type Name")
@@ -63,7 +57,6 @@ class CrimeRecordCreate(BaseModel):
     city: str = Field(..., alias="City")
     state: str = Field(..., alias="State")
     address_type: str = Field(..., alias="Address Type")
-    # Common location was empty in some of your CSV rows, so it remains Optional
     case_status: Optional[str] = Field(None, alias="Case Status")
 # ==========================================
 # 3. FastAPI Application Setup

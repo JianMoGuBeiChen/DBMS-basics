@@ -40,12 +40,10 @@ addForm.addEventListener("submit", async (event) => {
 
   if (!response.ok) {
     const error = await response.json();
-    console.log(error);
     alert(error.detail);
     return;
   }
 
-  console.log(newCrime);
   addForm.reset();
   addForm.classList.toggle("hidden");
   searchForm.requestSubmit();
@@ -76,11 +74,9 @@ searchForm.addEventListener("submit", async (event) => {
   if (status) params.append("status", status);
 
   const url = "http://127.0.0.1:8000/crimes?" + params.toString();
-  console.log(url);
 
   const response = await fetch(url);
   const crimes = await response.json();
-  console.log(crimes);
 
   crimeTable.innerHTML = "";
   crimes.forEach((crime, index) => {
