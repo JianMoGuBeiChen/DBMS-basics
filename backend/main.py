@@ -83,9 +83,6 @@ def get_db_connection():
 # ==========================================
 @app.get("/crimes", response_model=List[CrimeRecordResponse])
 def get_crimes(
-    # Pagination
-    limit: int = Query(1500, ge=1, description="Max rows to return"),
-    skip: int = Query(0, ge=0, description="Rows to skip"),
     
     # Date Range Filters
     report_start_date: Optional[date] = Query(None, description="Format: YYYY-MM-DD"),
@@ -174,10 +171,6 @@ def get_crimes(
         if conditions:
             sql += " WHERE " + " AND ".join(conditions)
 
-        # 5. Add Pagination
-        sql += " LIMIT %s OFFSET %s"
-        values.extend([limit, skip])
-        
         # 6. Execute safely
         cursor.execute(sql, tuple(values))
         records = cursor.fetchall()
