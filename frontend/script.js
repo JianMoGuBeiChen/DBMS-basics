@@ -157,23 +157,6 @@ const createRow = (crime, index) => {
   return row;
 };
 
-const dummyCrime = {
-  "Crime Id": 190090430,
-  "Original Crime Type Name": "Vandalism",
-  "Report Date": "2019-01-09",
-  "Call Date": "2019-01-09",
-  "Offense Date": "2019-01-09",
-  "Call Time": "06:12:00",
-  Disposition: "ADV",
-  Address: "700 Block Of Taylor St",
-  City: "San Francisco",
-  State: "CA",
-  "Address Type": "Premise Address",
-  "Case Status": "Withdrawn",
-};
-
-crimeTable.appendChild(createRow(dummyCrime, 0));
-
 searchForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
