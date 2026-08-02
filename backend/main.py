@@ -10,7 +10,7 @@ DB_CONFIG = {
     "host": "localhost",
     "port": 3306,
     "user": "root",
-    "password": "password",
+    "password": "1234567890",
     "database": "dbms",
     "cursorclass": DictCursor 
 }
