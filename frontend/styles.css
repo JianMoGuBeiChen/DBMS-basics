@@ -59,7 +59,8 @@ label {
   font-weight: bold;
 }
 
-input {
+#addForm input,
+#searchForm input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -147,5 +148,18 @@ footer {
 }
 
 .action-cell {
-  width: 300px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-input {
+  width: fit-content;
+  min-width: 40px;
+  max-width: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
